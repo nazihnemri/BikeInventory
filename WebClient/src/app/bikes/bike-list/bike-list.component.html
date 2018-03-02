@@ -1,0 +1,30 @@
+<div class="table-responsive">
+<table class="table table-sm table-hover" border="1">
+    <thead>
+    <tr >
+        <th>Reference</th>
+      <th> Description</th>
+      <th>Quantity</th>
+      <th>Type</th>
+      <th>Color</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+  <tr *ngFor="let bike of bikeService.bikeList">
+      <td>{{bike.Reference}}</td>
+      <td>{{bike.Description}}</td>
+      <td>{{bike.Quantity}}</td>
+      <td>{{bike.Type}}</td>
+      <td>{{bike.Color}}</td>
+    
+    <td>
+      <a class="btn" (click)="showForEdit(bike)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="onDelete(bike.BikeID)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>
+</div>

@@ -1,0 +1,25 @@
+<div style="text-align:center;">
+ 
+  <h2 class=" text-Black" style="border-style: dotted;">
+     <span>  <img  [src]="fullImagePath"  height="100" width="100"></span>
+      Bikes Inventory Management</h2>
+</div>
+<div align="center">
+ 
+    
+    <div class="col-md-6">
+    
+         <button type="button" class="btn btn-lg btn-block btn-primary" (click)="bikeService.show2=!bikeService.show2"> <i class="fa fa-plus"></i> Add a new Bike </button>
+      </div>
+     <br><br>
+   
+    <div *ngIf="bikeService.show2" class="col-md-6">
+    <app-bike></app-bike>
+  </div>
+  
+    <br><br><br>
+  
+  <div class="col-md-6">
+    <app-bike-list></app-bike-list>
+  </div>
+</div>

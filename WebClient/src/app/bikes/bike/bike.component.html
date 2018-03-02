@@ -1,0 +1,39 @@
+<form class="bike-form" #bikeForm="ngForm" (ngSubmit)="onSubmit(bikeForm)">
+  <input type="hidden" name="BikeID" #EmployeeID="ngModel" [(ngModel)]="bikeService.selectedBike.BikeID">
+ 
+    <div class="form-group ">
+      <input class="form-control" name="Reference" #Reference="ngModel" [(ngModel)]="bikeService.selectedBike.Reference"
+        placeholder="Reference" required>
+      <div class="validation-error" *ngIf="Reference.invalid && Reference.touched">This Field is Required.</div>
+    </div>
+    <div class="form-group">
+      <input class="form-control" name="Description" #Description="ngModel" [(ngModel)]="bikeService.selectedBike.Description" placeholder="Description"
+        required>
+      <div class="validation-error" *ngIf="Description.invalid && Description.touched">This Field is Required.</div>
+    </div>
+ 
+  <div class="form-group">
+    <input class="form-control" name="Quantity" #Quantity="ngModel" [(ngModel)]="bikeService.selectedBike.Quantity" placeholder="Quantity" required>
+       <div class="validation-error" *ngIf="Quantity.invalid && Quantity.touched">This Field is Required.</div>
+  </div>
+  
+    <div class="form-group">
+      <input class="form-control" name="Type" #Type="ngModel" [(ngModel)]="bikeService.selectedBike.Type" placeholder="Type" required>
+         <div class="validation-error" *ngIf="Type.invalid && Type.touched">This Field is Required.</div>
+    </div>
+    <div class="form-group">
+      <input class="form-control" name="Color" #Color="ngModel" [(ngModel)]="bikeService.selectedBike.Color" placeholder="Color" required>
+         <div class="validation-error" *ngIf="Color.invalid && Color.touched">This Field is Required.</div>
+    </div>
+  
+
+    <div class="form-group ">
+      <button [disabled]="!bikeForm.valid" type="submit" class="btn btn-lg btn-block btn-success">
+        <i class="fa fa-floppy-o"></i> Submit</button>
+    </div>
+    <div class="form-group">
+      <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(bikeForm)">
+        <i class="fa fa-repeat"></i> Reset</button>
+    </div>
+
+</form>
